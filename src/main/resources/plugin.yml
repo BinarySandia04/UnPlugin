@@ -1,0 +1,23 @@
+name: Syndriacore
+version: '${version}'
+main: com.aranroig.syndriacore.syndriacore.Syndriacore
+api-version: 1.18
+prefix: Syndriacore
+loadbefore: [  ]
+authors: [ Syndria98 ]
+description: Plugin per a syndriacore amb juegos i coses guais
+website: aranroig.com
+commands:
+  snake:
+    description: Snaek gam
+    usage: /<command>
+  gspawnpoint:
+    description: Spawnpoint
+    usage: /<command>
+    aliases:
+      - globalspawnpoint
+  goto:
+    description: Ves a nose
+    usage: /<command>
+    aliases:
+      - go
