@@ -27,6 +27,9 @@ public class SnakeGame extends Game {
     public int arenaRadius;
     public int timeToStart = 600;
     public int timeToRestart = 200;
+    public int bombSpawnTime = 150;
+
+    public int bombTime = 150;
 
     public SnakeGame(Syndriacore plugin, String gameName) {
         super(plugin, gameName);
@@ -50,10 +53,14 @@ public class SnakeGame extends Game {
         arenaRadius = ConfigUtils.GetInt("Snake.ArenaRadius");
         timeToStart = ConfigUtils.GetInt("Snake.TimeToStart");
         timeToRestart = ConfigUtils.GetInt("Snake.TimeToRestart");
+        bombTime = ConfigUtils.GetInt("Snake.BombTime");
+        bombSpawnTime = ConfigUtils.GetInt("Snake.BombSpawnTime");
     }
 
     @Override
     public void Start(){
+        super.Start();
+
         InitArmorStands();
         // Init game state
         SetState(new SnakeWaitingStage(this));

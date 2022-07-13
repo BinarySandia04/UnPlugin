@@ -1,5 +1,6 @@
 package com.aranroig.syndriacore.syndriacore.interfaces;
 
+import com.aranroig.syndriacore.syndriacore.utils.Print;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class GameClock extends BukkitRunnable {

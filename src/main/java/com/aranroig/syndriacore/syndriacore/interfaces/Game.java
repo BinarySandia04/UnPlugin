@@ -31,8 +31,6 @@ public class Game {
 
         this.world = Bukkit.getWorld(plugin.getConfig().getString(gameName + ".World"));
 
-        Print.Debug("HGOLA;SKLKJSDKLAJK");
-
         this.loop = new GameClock(this);
     }
 
@@ -44,7 +42,9 @@ public class Game {
     }
 
     public void Init() { }
-    public void Start() { loop.runTaskTimer(plugin, 0, 1); }
+    public void Start() {
+        loop.runTaskTimer(plugin, 0, 1);
+    }
 
     public void Clear(){
         loop.cancel();

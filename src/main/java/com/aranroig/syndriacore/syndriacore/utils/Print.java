@@ -2,6 +2,7 @@ package com.aranroig.syndriacore.syndriacore.utils;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
+import net.md_5.bungee.api.ChatMessageType;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -13,6 +14,10 @@ public class Print {
         for(Player p : Bukkit.getOnlinePlayers()){
             p.sendMessage(message);
         }
+    }
+
+    public static void StatusBar(Player p, Component message){
+        p.sendActionBar(message);
     }
 
     public static void Debug(Player p, String message){

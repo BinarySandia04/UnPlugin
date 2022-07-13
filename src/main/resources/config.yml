@@ -10,6 +10,8 @@ Snake:
   ArenaHeight: 200
   ArenaRadius: 30
   ConstructionTime: 600
+  BombTime: 100
+  BombSpawn: 150
   World: "Patata"
   Lobby:
     x: 0

@@ -24,11 +24,20 @@ public class SnakeRestartStage implements GameState {
         this.snakeGame = snakeGame;
     }
 
+    // No ha guanyat ningú constructor
+    public SnakeRestartStage(SnakeGame snakeGame){
+        this.snakeGame = snakeGame;
+    }
+
     @Override
     public void Start() {
         snakeGame.ClearArena();
         for(Player p : snakeGame.players){
-            p.sendTitle(winner.getName() + " ha guanyat", "");
+            if(winner != null){
+                p.sendTitle(winner.getName() + " ha guanyat", "");
+            } else {
+                p.sendTitle("No ha guanyat ningú", "");
+            }
             p.setGameMode(GameMode.ADVENTURE);
             p.setFallDistance(0);
             p.teleport(snakeGame.spawnLocation);

@@ -4,11 +4,7 @@ import com.aranroig.syndriacore.syndriacore.game.snake.SnakeGame;
 import com.aranroig.syndriacore.syndriacore.interfaces.GameState;
 import com.aranroig.syndriacore.syndriacore.utils.ConfigUtils;
 import com.aranroig.syndriacore.syndriacore.utils.WorldUtils;
-import net.minecraft.network.syncher.DataWatcher;
-import net.minecraft.network.syncher.DataWatcherObject;
-import net.minecraft.network.syncher.DataWatcherRegistry;
 import org.bukkit.*;
-import org.bukkit.craftbukkit.v1_18_R2.entity.CraftPlayer;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
@@ -72,7 +68,7 @@ public class SnakeConstructionStage implements GameState {
 
         for(Player p : snakeGame.players) {
 
-            ((CraftPlayer) p).getHandle().ai().b(new DataWatcherObject<>(10, DataWatcherRegistry.b),0);
+            p.setArrowsInBody(0);
 
             p.setLevel((constructionTime - currentTime) / 20 + 1);
             p.setExp((float) currentTime / constructionTime);
